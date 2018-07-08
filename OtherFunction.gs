@@ -39,33 +39,31 @@ function doTest() {
       "callback_data":"myCallBackData"
     }]]}*/
 
-  var textMessage = new TextMessage(
-    chat_id = 74345873 + '',
-    text = 'bahram',
-    reply_to_message_id = null,
-    parse_mode = 'HTML',
-    reply_markup = reply_markup,
-    disable_notification = false,
-    disable_web_page_preview = true
-  );
+  var textMessage = {
+    chat_id : String(74345873),
+    text: 'bahram',
+    parse_mode : 'MarkDown',
+    reply_markup : JSON.stringify(reply_markup)
+  }
+
   sendTextMessage(textMessage);
 }
 
-
+function testing() {
+  removeKeyboard('remove');
+}
 // remove keyboard with one messge
 function removeKeyboard(txt) {
   var reply = {
     "remove_keyboard": true,
     "selective": true
   };
-  var textMessage = new TextMessage(
-    chat_id = 74345873 + '',
-    text = txt,
-    parse_mode = null,
-    disable_notification = null,
-    reply_to_message_id = null,
-    disable_web_page_preview = null,
-    reply_markup = reply
-  );
+
+  var textMessage = {
+    chat_id: String(74345873),
+    text: txt,
+    reply_markup: JSON.stringify(reply)
+  };
+
   sendTextMessage(textMessage);
 }

@@ -13,37 +13,41 @@ function doPost(e) {
 
   if (isPrivateMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'is Private Message'
-    );
+    var msg = {
+      chat_id: String(result.message.chat.id),
+      text: 'Is Private Message'
+    }
 
     MessageOnPrivate(result);
 
   } else if (isGroupMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'is Group Message'
-    );
+    var msg = {
+      chat_id: String(result.message.chat.id),
+      text: 'Is Group Message'
+    }
+
     sendTextMessage(msg);
     // do some thing else
 
   } else if (isSuperGroupMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'is Super Group Message'
-    );
+    var msg = {
+      chat_id: String(result.message.chat.id),
+      text: 'Is Super Group Message'
+    }
+
     sendTextMessage(msg);
     // do some thing else
 
   } else if (isChannelMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'is Channel Message'
-    );
+    var msg = {
+      chat_id: String(result.message.chat.id),
+      text: 'Is Channel Message'
+    }
+
+
     sendTextMessage(msg);
     // do some thing else
 

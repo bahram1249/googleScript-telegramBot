@@ -1,7 +1,7 @@
-function isGameMessage(result){
+function isGameMessage(result) {
 
-    if(result.message.game){
-      return true;
-    }
-    return false;
+  if (result.message.game) {
+    return true;
+  }
+  return false;
 }

@@ -1,73 +1,78 @@
 function CheckMessageOnPrivate(result) {
   if (isTextMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'your message is text'
-    );
+    var msg = {
+      chat_id : String(result.message.chat.id),
+      text : 'Your Message Is Text'
+    }
     sendTextMessage(msg);
     // do something else
 
   } else if (isAudioMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'your message is audio'
-    );
+    var msg = {
+      chat_id: String(result.message.chat.id),
+      text: 'Your Message Is Audio'
+    }
+
     sendTextMessage(msg);
     // do something else
 
   } else if (isStickerMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'your message is sticker'
-    );
+    var msg = {
+      chat_id: String(result.message.chat.id),
+      text: 'Your Message Is Sticker'
+    }
+
     sendTextMessage(msg);
     // do something else
 
   } else if (isVideoMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'your message is video'
-    );
+    var msg = {
+      chat_id: String(result.message.chat.id),
+      text: 'Your Message Is Video'
+    }
+
     sendTextMessage(msg);
     // do something else
 
   } else if (isPhotoMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'your message is photo'
-    );
+    var msg = {
+      chat_id: String(result.message.chat.id),
+      text: 'Your Message Is Photo'
+    }
+
     sendTextMessage(msg);
     // do something else
 
   } else if (isDocumentMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'your message is document'
-    );
+    var msg = {
+      chat_id: String(result.message.chat.id),
+      text: 'Your Message Is Document'
+    }
+
     sendTextMessage(msg);
     // do something else
 
   } else if (isGameMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'your message is game'
-    );
+    var msg = {
+      chat_id: String(result.message.chat.id),
+      text: 'Your Message Is Game'
+    }
     sendTextMessage(msg);
     // do something else
 
   } else if (isVoiceMessage(result)) {
 
-    var msg = new TextMessage(
-      chat_id = result.message.chat.id + '',
-      text = 'your message is voice'
-    );
+    var msg = {
+      chat_id: String(result.message.chat.id),
+      text: 'Your Message Is Voice'
+    }
     sendTextMessage(msg);
     // do something else
 
