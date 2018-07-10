@@ -4,10 +4,10 @@ function doPost(e) {
   var scriptProperties = PropertiesService.getScriptProperties();
   scriptProperties.setProperty('1', JSON.stringify(result));
 
-  var textMessage = new TextMessage(
-    chat_id = result.message.chat.id + '',
-    text = JSON.stringify(result)
-  );
+  var textMessage = {
+    chat_id : String(result.message.chat.id),
+    text : JSON.stringify(result)
+  };
   sendTextMessage(textMessage);
 
 
@@ -17,7 +17,8 @@ function doPost(e) {
       chat_id: String(result.message.chat.id),
       text: 'Is Private Message'
     }
-
+    sendTextMessage(msg);
+    
     MessageOnPrivate(result);
 
   } else if (isGroupMessage(result)) {

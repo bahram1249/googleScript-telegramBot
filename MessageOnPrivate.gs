@@ -1,29 +1,27 @@
-function MessageOnPrivate(result) {
+function MessageOnPrivate(result){
 
-  if (isInScriptProperties(result)) {
+  if (isInScriptProperties(result)){
 
-    CheckMessageOnPrivate(result);
+      CheckMessageOnPrivate(result);
+      
+    }else if(result.message.text == '/start'){
 
-  } else if (result.message.text == '/start') {
-
-    // keep chat_id for promotion or send news or other
-    setInScriptProperties(result);
-
-
-    //send welcome message to user
-    var textMessage = {
-      chat_id: String(result.message.chat.id),
-      text: 'Welcome To Our Robot'
+      // keep chat_id for promotion or send news or other
+      setInScriptProperties(result);
+      
+      
+      //send welcome message to user
+      var textMessage = new TextMessage(
+          chat_id = String(result.message.chat.id),
+          text='welcome to our robot'
+      );
+      sendTextMessage(textMessage);
+      
+    }else{
+      var textMessage = new TextMessage(
+        chat_id = String(result.message.chat.id),
+        text='click /start to use this bot'
+      );
+      sendTextMessage(textMessage);
     }
-
-    sendTextMessage(textMessage);
-
-  } else {
-
-    var textMessage = {
-      chat_id: String(result.message.chat.id),
-      text: 'Click /start To Use This Bot'
-    }
-    sendTextMessage(textMessage);
-  }
 }

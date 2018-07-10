@@ -1,6 +1,6 @@
 function isInUserPropeties(result) {
   var userProperties = PropertiesService.getUserProperties();
-  if (userProperties.getProperty(result.message.chat.id + '')) {
+  if (userProperties.getProperty(String(result.message.chat.id))) {
     return true;
   }
   return false;
@@ -8,7 +8,7 @@ function isInUserPropeties(result) {
 
 function isInScriptProperties(result) {
   var scriptProperties = PropertiesService.getScriptProperties();
-  if (scriptProperties.getProperty(result.message.chat.id + '')) {
+  if (scriptProperties.getProperty(String(result.message.chat.id))) {
     return true;
   }
   return false;
@@ -18,7 +18,7 @@ function isInScriptProperties(result) {
 // keep chat_id telegram
 function setInScriptProperties(result) {
   var scriptProperties = PropertiesService.getScriptProperties();
-  scriptProperties.setProperty(result.message.chat.id + '', JSON.stringify(result.message.chat));
+  scriptProperties.setProperty(String(result.message.chat.id), JSON.stringify(result.message.chat));
 }
 
 
