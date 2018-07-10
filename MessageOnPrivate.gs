@@ -11,17 +11,17 @@ function MessageOnPrivate(result){
       
       
       //send welcome message to user
-      var textMessage = new TextMessage(
-          chat_id = String(result.message.chat.id),
-          text='welcome to our robot'
-      );
+      var textMessage = {
+          chat_id : String(result.message.chat.id),
+          text : 'Welcome To Our Robot'
+      };
       sendTextMessage(textMessage);
       
     }else{
-      var textMessage = new TextMessage(
-        chat_id = String(result.message.chat.id),
-        text='click /start to use this bot'
-      );
+      var textMessage = {
+        chat_id : String(result.message.chat.id),
+        text : 'Click /start To Use This Bot'
+      };
       sendTextMessage(textMessage);
     }
 }
