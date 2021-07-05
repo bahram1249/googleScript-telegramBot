@@ -7,5 +7,5 @@ create a telegram bot with google script use web service api
 - run setWebhook function manually then see the logger script
 - send message to your bot and enjoyed !!
 
-# when new message send the bot
+# when new message send to bot
 open index.gs file then see doPost function , when new message send it to your bot , telegram with webhook use http post send it data to your webUrlapp and doPost function run it !
